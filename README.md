@@ -107,7 +107,7 @@ A_{\mathrm{end}}^k - A_{\mathrm{start}}^k \leq T_{\max} \quad \forall k \in V
 Travel times are derived from geographic distance using the Haversine formula:
 
 ```math
-d_{ij} = 2R \cdot \operatorname{arctan2}\left( \sqrt{a}, \sqrt{1-a} \right)
+d_{ij} = 2R \cdot \mathrm{arctan2}\left( \sqrt{a}, \sqrt{1-a} \right)
 ```
 
 where
