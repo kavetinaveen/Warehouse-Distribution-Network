@@ -146,8 +146,8 @@ t_{ij} = \frac{d_{ij}}{v} \times 60 + s_j
 ## Project Structure
 
 ```
-VRP/
 ├── README.md
+├── requirements.txt
 ├── data/
 │   └── Logistic Details_JH_Last 15 Days.xlsx
 └── src/
@@ -159,11 +159,12 @@ VRP/
 
 ## How to Run
 
-1. Install dependencies: `pandas`, `openpyxl`, `ortools`, `matplotlib`
-2. Open `src/notebooks/explore_data.ipynb`
-3. Run all cells; the notebook loads data, builds the model, and solves with OR-Tools
-4. Set `TARGET_DATE` and `MAX_STORES` (optional) for the day and store subset to optimize
-5. Set `ACTUAL_ADHOC_USED` in the comparison cell if you have historical adhoc counts
+1. Create a virtual environment (recommended): `python -m venv venv` and activate it
+2. Install dependencies: `pip install -r requirements.txt`
+3. Open `src/notebooks/explore_data.ipynb`
+4. Run all cells; the notebook loads data, builds the model, and solves with OR-Tools
+5. Set `TARGET_DATE` and `MAX_STORES` (optional) for the day and store subset to optimize
+6. Set `ACTUAL_ADHOC_USED` in the comparison cell if you have historical adhoc counts
 
 ---
 
