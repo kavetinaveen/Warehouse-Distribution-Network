@@ -150,6 +150,8 @@ t_{ij} = \frac{d_{ij}}{v} \times 60 + s_j
 ├── requirements.txt
 ├── data/
 │   └── Logistic Details_JH_Last 15 Days.xlsx
+├── scripts/
+│   └── compute_osm_distances.py   # OSM/OSRM travel distance matrix → CSV
 └── src/
     └── notebooks/
         └── explore_data.ipynb   # VRP implementation
@@ -165,6 +167,23 @@ t_{ij} = \frac{d_{ij}}{v} \times 60 + s_j
 4. Run all cells; the notebook loads data, builds the model, and solves with OR-Tools
 5. Set `TARGET_DATE` and `MAX_STORES` (optional) for the day and store subset to optimize
 6. Set `ACTUAL_ADHOC_USED` in the comparison cell if you have historical adhoc counts
+
+---
+
+## OpenStreetMap Travel Distances
+
+To compute road-network travel distances (instead of Haversine) using OpenStreetMap:
+
+```bash
+python scripts/compute_osm_distances.py
+```
+
+This calls the OSRM Table API and writes two CSV files to `data/`:
+
+- **travel_distances_matrix.csv** — square matrix (location × location) with distance in km
+- **travel_distances_long.csv** — long format: `from`, `to`, `distance_km`, `duration_min`
+
+For large datasets, use `max_locations=20` (or similar) in the script to limit the number of stores.
 
 ---
 
